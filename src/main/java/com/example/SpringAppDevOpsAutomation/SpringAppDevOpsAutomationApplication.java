@@ -14,7 +14,7 @@ public class SpringAppDevOpsAutomationApplication {
 	}
 	@GetMapping("/message")
 	public String getMessage() {
-		return "Congratulations!! your application finaly deployed..............";
+		return "Congratulations!! your application finaly deployed............";
 	}
 
 }
