@@ -1,0 +1,38 @@
+apiVersion: app/v1
+kind: Deployment
+metadata:
+  name: spring-boot-automation-deployment
+spec:
+  selector:
+    matchLabels: 
+      app: spring-boot-automation
+  replicas: 2
+  template:
+    metadata: 
+      labels:
+        app: spring-boot-automation
+    spec:
+      containers:
+        - name: spring-boot-automation
+          image: devops-automation/springappdevopsautomation
+          imagePullPolicy: ifNotPresent
+          ports:
+            - containerPort: 8080
+            
+---
+
+
+
+apiVersion: app/v1
+kind: Service
+metadata:
+  name: spring-boot-automation-service
+spec:
+  selector:
+    app: spring-boot-automation
+  ports:
+    - protocal: "TCP"
+      port: 8080
+      targetPort: 8080
+  type: nodePort
+    
