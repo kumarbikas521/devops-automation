@@ -1,38 +1,36 @@
-apiVersion: app/v1
-kind: Deployment
+apiVersion: apps/v1
+kind: Deployment # Kubernetes resource kind we are creating
 metadata:
   name: spring-boot-automation-deployment
 spec:
   selector:
-    matchLabels: 
+    matchLabels:
       app: spring-boot-automation
-  replicas: 2
+  replicas: 2 # Number of replicas that will be created for this deployment
   template:
-    metadata: 
+    metadata:
       labels:
         app: spring-boot-automation
     spec:
       containers:
         - name: spring-boot-automation
-          image: devops-automation/springappdevopsautomation
-          imagePullPolicy: ifNotPresent
+          image: devops-automation/springappdevopsautomation # Image that will be used to containers in the cluster
+          imagePullPolicy: IfNotPresent
           ports:
-            - containerPort: 8080
-            
+            - containerPort: 8080 # The port that the container is running on in the cluster
+
+
 ---
 
-
-
-apiVersion: app/v1
-kind: Service
-metadata:
-  name: spring-boot-automation-service
+apiVersion: v1 # Kubernetes API version
+kind: Service # Kubernetes resource kind we are creating
+metadata: # Metadata of the resource kind we are creating
+  name: spring-boot-service
 spec:
   selector:
     app: spring-boot-automation
   ports:
-    - protocal: "TCP"
-      port: 8080
-      targetPort: 8080
-  type: nodePort
-    
+    - protocol: "TCP"
+      port: 8080 # The port that the service is running on in the cluster
+      targetPort: 8080 # The port exposed by the service
+  type: NodePort # type of the service.
