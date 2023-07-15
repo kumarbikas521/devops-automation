@@ -13,7 +13,7 @@ spec:
         app: spring-boot-automation
     spec:
       containers:
-        - name: sspring-boot-automation
+        - name:  k8s_POD_spring-boot-automation-deployment-9c8694cdd-xgtqj_default_be63f0d3-07b5-4cf4-b8aa-631da00ea455_0
           image: devops/spring-app-devops-automation # Image that will be used to containers in the cluster
           imagePullPolicy: Never
           ports:
