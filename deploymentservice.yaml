@@ -13,7 +13,7 @@ spec:
         app: spring-boot-automation
     spec:
       containers:
-        - name: spring-app-devops-automation
+        - name: sspring-boot-automation
           image: devops/spring-app-devops-automation # Image that will be used to containers in the cluster
           imagePullPolicy: Never
           ports:
