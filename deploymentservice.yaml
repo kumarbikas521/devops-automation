@@ -14,10 +14,10 @@ spec:
     spec:
       containers:
         - name: spring-app-devops-automation
-          image: spring-app-devops-automation # Image that will be used to containers in the cluster
+          image: devops/spring-app-devops-automation # Image that will be used to containers in the cluster
           imagePullPolicy: Never
           ports:
-            - containerPort: 9090 # The port that the container is running on in the cluster
+            - containerPort: 7777 # The port that the container is running on in the cluster
 
 
 ---
@@ -31,6 +31,6 @@ spec:
     app: spring-boot-automation
   ports:
     - protocol: "TCP"
-      port: 9090 # The port that the service is running on in the cluster
-      targetPort: 9090 # The port exposed by the service
+      port: 7777 # The port that the service is running on in the cluster
+      targetPort: 7777 # The port exposed by the service
   type: NodePort # type of the service.
