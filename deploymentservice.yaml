@@ -15,7 +15,7 @@ spec:
       containers:
         - name: spring-boot-automation
           image: devops/spring-app-devops-automation # Image that will be used to containers in the cluster
-          imagePullPolicy: Always
+          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 7777 # The port that the container is running on in the cluster
 
