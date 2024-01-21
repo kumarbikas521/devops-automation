@@ -1,5 +1,7 @@
 package com.example.SpringAppDevOpsAutomation;
 
+import javax.annotation.PostConstruct;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,7 +16,11 @@ public class SpringAppDevOpsAutomationApplication {
 	}
 	@GetMapping("/message")
 	public String getMessage() {
-		return "Congratulations!! your application finaly deployed............";
+		return "Congratulations!! your application finally deployed............";
+	}
+	@PostConstruct
+	public void test() {
+		
 	}
 
 }
