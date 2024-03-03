@@ -39,7 +39,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
-		<finalName>SpringAppDevOpsAutomation</finalName>
+		<finalName>spring-app-automation-image</finalName>
 	</build>
 
 </project>

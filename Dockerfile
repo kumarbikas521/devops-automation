@@ -1,4 +1,4 @@
-FROM openjdk:21
-EXPOSE 9090
-ADD target/SpringAppDevOpsAutomation.jar SpringAppDevOpsAutomation.jar
-ENTRYPOINT ["java", "-jar", "/spring-app-automation-image.jar"]
+FROM eclipse-temurin:17-jdk-alpine
+EXPOSE 8090
+ADD target/spring-app-automation-image.jar spring-app-automation-image.jar
+ENTRYPOINT ["java", "-jar", "spring-app-automation-image.jar"]
