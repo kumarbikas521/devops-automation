@@ -16,7 +16,7 @@ public class SpringAppDevOpsAutomationApplication {
 	}
 	@GetMapping("/message")
 	public String getMessage() {
-		return "Congratulations!! your application finally deployed in minikube............";
+		return "Congratulations!! your application finally deployed............";
 	}
 	@PostConstruct
 	public void test() {
